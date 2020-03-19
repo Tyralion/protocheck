@@ -10,6 +10,6 @@ RUN apt-get update && \
     go get github.com/golang/protobuf/protoc-gen-go && \
     go get github.com/uber/prototool/cmd/prototool
 
-
-ENV PATH="/root/go/bin:${PATH}"
 ADD prototool.yaml /protos/prototool.yaml
+ADD linter.sh /linter.sh
+

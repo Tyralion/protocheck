@@ -10,6 +10,7 @@ RUN apt-get update && \
     go get github.com/golang/protobuf/protoc-gen-go && \
     go get github.com/uber/prototool/cmd/prototool
 
-ADD prototool.yaml /protos/prototool.yaml
-ADD linter.sh /linter.sh
+ADD protos /protos
+ADD protocheck.sh /protocheck.sh
 
+CMD ["/protocheck.sh"]

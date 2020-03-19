@@ -1,3 +1,7 @@
+protoc:
+  includes:
+    - /protos/protos/rpc
+
 lint:
   group: uber2
   rules:

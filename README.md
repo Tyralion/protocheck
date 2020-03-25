@@ -26,7 +26,7 @@ ext_tools:
       at: ~/src
     - run:
       name: Validate proto files
-      command: docker run -v $(pwd)/src:/protos/protos reg.talenttechlab.org/library/protocheck
+      command: docker run -v $(pwd):/protos/protos reg.talenttechlab.org/library/protocheck
 ```
 
 Этоа job'а должна запускаться до job'ы с тестами (не тратье своё время на тесты), но после init'а. Выглядит это примерно вот так:

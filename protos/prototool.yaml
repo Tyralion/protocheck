@@ -1,3 +1,6 @@
+excludes:
+  - /protos/protos/rpc_clients
+
 protoc:
   includes:
     - /protos/protos/rpc

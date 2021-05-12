@@ -22,7 +22,7 @@ jobs:
         run: docker tag protocheck ghcr.io/severgroup-tt/protocheck:latest
 
       - name: Login
-        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }} ghcr.io
+        run: docker login ghcr.io -u ${DOCKER_USERNAME} --password-stdin
 
       - name: Push
         run: docker push ghcr.io/severgroup-tt/protocheck:latest

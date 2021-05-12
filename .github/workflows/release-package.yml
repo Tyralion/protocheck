@@ -1,0 +1,28 @@
+name: Release Package
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+#      - name: Prepare
+#        run: .bin/prepare_env.sh
+#        shell: bash
+
+      - name: Build
+        run: docker build -t protocheck .
+
+      - name: Tag
+        run: docker tag protocheck ghcr.io/severgroup-tt/protocheck:latest
+
+      - name: Login
+        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }} ghcr.io
+
+      - name: Push
+        run: docker push ghcr.io/severgroup-tt/protocheck:latest

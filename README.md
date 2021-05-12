@@ -13,43 +13,14 @@ $ docker run --rm -v $(pwd):/protos/protos reg.talenttechlab.org/library/protoch
 
 Все проверки запускаюся по умолчанию, если ошибки будут - вы узнаете, если нет - тоже :)
 
-# Встраивание в CI
+# Встраивание в github actions
 
-Обычно у вас есть job под названием ext_tools если у вас его нет, то нужно его сделать. Выглядит он следующим образом:
+Управление protocheck action осуществляется с помощью terraform (infra/tf/github/)
 
-```yaml
-ext_tools:
-  working_directory: ~/src
-  machine: true
-  steps:
-    - attach_workspace:
-      at: ~/src
-    - run:
-      name: Validate proto files
-      command: docker run -v $(pwd):/protos/protos reg.talenttechlab.org/library/protocheck
+Сам action находится в infra/tf/github/gh_files/protocheck.yaml
+
+Для добавления action нужно добавить репу в variables.tf, в секцию repositories, по аналогии с остальными (предварительно нужно импортировать репу для terraform)
+
 ```
-
-Этоа job'а должна запускаться до job'ы с тестами (не тратье своё время на тесты), но после init'а. Выглядит это примерно вот так:
-
-```yaml
-workflows:
-  version: 2
-  app:
-    jobs:
-      - init:
-          filters:
-            tags:
-              only: /.*/
-      - ext_tools:
-          requires:
-            - init
-          filters:
-            tags:
-              only: /.*/
-      - tests:
-          requires:
-            - ext_tools
-          filters:
-            tags:
-              only: /.*/
+terraform import 'github_repository.managed_repositories["repo-name"]' 'repo-name'
 ```

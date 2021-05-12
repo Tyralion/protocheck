@@ -21,7 +21,7 @@ jobs:
         run: docker build -t protocheck .
       - name: Tags
         run: |
-          docker tag protocheck reg.talenttechlab.org/library/protocheck:latest
+          docker tag protocheck reg.talenttechlab.org/public/protocheck:latest
       - name: Push
         run: |
-          docker push reg.talenttechlab.org/library/protocheck:latest
+          docker push reg.talenttechlab.org/public/protocheck:latest

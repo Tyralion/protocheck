@@ -8,4 +8,4 @@ branding:
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/severgroup-tt/actions-protocheck:latest'
+  image: 'Dockerfile'

@@ -15,12 +15,6 @@ $ docker run --rm -v $(pwd):/protos/protos reg.talenttechlab.org/library/protoch
 
 # Встраивание в github actions
 
-Управление protocheck action осуществляется с помощью terraform (infra/tf/github/)
+Управление protocheck action осуществляется с помощью terraform (infra/tf/github/). По умолчанию работает на всех репозиториях, которые управляются из terraform.
 
 Сам action находится в infra/tf/github/gh_files/protocheck.yaml
-
-Для добавления action нужно добавить репу в variables.tf, в секцию repositories, по аналогии с остальными (предварительно нужно импортировать репу для terraform)
-
-```
-terraform import 'github_repository.managed_repositories["repo-name"]' 'repo-name'
-```

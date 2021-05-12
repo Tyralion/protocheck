@@ -16,7 +16,7 @@ jobs:
 #        shell: bash
 
       - name: Login
-        run: docker login ghcr.io -u ${DOCKER_USERNAME} --password-stdin
+        run: echo "${DOCKER_PASSWORD}" | docker login ghcr.io -u ${DOCKER_USERNAME} --password-stdin
 
       - name: Build
         run: docker build -t protocheck .

@@ -11,12 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-#      - name: Prepare
-#        run: .bin/prepare_env.sh
-#        shell: bash
-
       - name: Login
-        run: docker login -u ${{ github.actor }} -p "${DOCKER_PASSWORD}" ghcr.io
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ghcr.io
 
       - name: Build
         run: docker build -t protocheck .

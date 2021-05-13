@@ -1,9 +1,9 @@
 excludes:
-  - /protos/protos/rpc_clients
+  - rpc_clients
 
 protoc:
   includes:
-    - /protos/protos/rpc
+    - rpc
 
 lint:
   group: uber2

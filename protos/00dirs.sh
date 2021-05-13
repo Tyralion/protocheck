@@ -1,6 +1,6 @@
 #!/bin/sh
 # Check proper directory structure in project
-if [ ! -d /protos/protos/rpc/tt ]; then
+if [ ! -d rpc/tt ]; then
   echo "***"
   echo "*** Where is your RPC directory ?"
   echo "*** At least you must have '/rpc/tt' in the root"

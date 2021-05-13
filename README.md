@@ -4,7 +4,7 @@
 
 ```sh
 
-$ docker run --rm -v $(pwd):/protos/protos reg.talenttechlab.org/library/protocheck
+$ docker run --rm -v $(pwd):/protos/protos --workdir /protos/protos ghcr.io/severgroup-tt/protocheck:latest
 ```
 
 Все проверки запускаюся по умолчанию, если ошибки будут - вы узнаете, если нет - тоже :)

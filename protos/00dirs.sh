@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Check proper directory structure in project
 if [ ! -d /protos/protos/rpc/tt ]; then
   echo "***"

@@ -1,0 +1,8 @@
+name: Protocheck
+on: [push]
+jobs:
+  protocheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: severgroup-tt/protocheck@latest

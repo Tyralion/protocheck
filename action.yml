@@ -9,7 +9,5 @@ branding:
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/severgroup-tt/protocheck:latest'
-  args:
-    - 'action'
   entrypoint: '/protocheck.sh'
 

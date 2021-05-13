@@ -1,5 +1,5 @@
 #!/bin/sh
-if [[ -z $1 ]]; then
+if [ -d /github/workspace/ ]; then
   ln -s /github/workspace/* /protos/protos
 fi
 

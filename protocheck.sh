@@ -4,6 +4,7 @@ then
   echo "link dir /github/workspace/"
   ln -s /github/workspace/* /protos/protos
 fi
+ls -l /github/workspace
 
 for i in `ls -1 /protos/*.sh`; do
   echo "=> execute check: `basename $i .sh | cut -c 3-` ..."

@@ -1,0 +1,13 @@
+name: 'protocheck'
+author: 'severgroup-tt'
+description: 'Check protofiles'
+
+branding:
+  icon: 'git-commit'
+  color: 'green'
+
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/severgroup-tt/protocheck:latest'
+  entrypoint: '/protocheck.sh'
+

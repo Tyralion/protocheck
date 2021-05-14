@@ -1,0 +1,24 @@
+name: Release Package
+
+on:
+  push:
+#    branches:
+#      - master
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+
+      - name: Build
+        run: docker build -t protocheck .
+
+      - name: Tag
+        run: docker tag protocheck ghcr.io/severgroup-tt/protocheck:latest
+
+      - name: Push
+        run: docker push ghcr.io/severgroup-tt/protocheck:latest

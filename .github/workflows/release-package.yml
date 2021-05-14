@@ -2,8 +2,11 @@ name: Release Package
 
 on:
   push:
-#    types:
-#      - created
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   push:

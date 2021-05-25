@@ -33,6 +33,14 @@
         "FILE_OPTIONS_UNSET_JAVA_OUTER_CLASSNAME",
         "WKT_TIMESTAMP_SUFFIX"
       ]
-    }
+    },
+    "ignores": [
+      {
+        "id": "PACKAGE_MAJOR_BETA_VERSIONED",
+        "files": [
+          "tt/m9t"
+        ]
+      }
+    ]
   }
 }

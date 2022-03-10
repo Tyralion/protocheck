@@ -31,13 +31,16 @@
         "FILE_OPTIONS_REQUIRE_PHP_NAMESPACE",
         "FILE_OPTIONS_UNSET_JAVA_MULTIPLE_FILES",
         "FILE_OPTIONS_UNSET_JAVA_OUTER_CLASSNAME",
-        "WKT_TIMESTAMP_SUFFIX",
-        "NAMES_NO_DATA"
+        "WKT_TIMESTAMP_SUFFIX"
       ]
     },
     "ignores": [
       {
         "id": "PACKAGE_MAJOR_BETA_VERSIONED",
+        "files": [
+          "rpc/tt/m9t"
+        ],
+        "id": "NAMES_NO_DATA",
         "files": [
           "rpc/tt/m9t"
         ]

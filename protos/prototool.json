@@ -40,6 +40,11 @@
         "files": [
           "rpc/tt/m9t"
         ]
+      }, {
+        "id": "NAMES_NO_DATA",
+        "files": [
+          "rpc/tt/m9t"
+        ]
       }
     ]
   }

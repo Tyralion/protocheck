@@ -39,7 +39,8 @@
         "id": "PACKAGE_MAJOR_BETA_VERSIONED",
         "files": [
           "rpc/tt/m9t"
-        ],
+        ]
+      }, {
         "id": "NAMES_NO_DATA",
         "files": [
           "rpc/tt/m9t"
